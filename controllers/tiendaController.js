@@ -18,7 +18,7 @@ const createArticulo = async (req, res) => {
 
         const nuevoArticulo = { ...req.body, precioEuros: precioEnEuros }
 
-        await articuloTienda.create(req.body)
+        await articuloTienda.create(nuevoArticulo)
 
         res.status(201).json({ articulo: nuevoArticulo, msg: 'Articulo creado exitosamente' })
     } catch (error) {
